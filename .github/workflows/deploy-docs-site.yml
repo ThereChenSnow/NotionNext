@@ -25,6 +25,11 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
+    # ⬇️【新增这一段】允许旧版 Action 在新 Node 24 环境下通过
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
     permissions:
       contents: read
       deployments: write
